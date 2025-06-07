@@ -1,8 +1,8 @@
 // eslint.config.js
 import prettierPlugin from 'eslint-plugin-prettier';
 import tsParser from '@typescript-eslint/parser';
+import tseslint from '@typescript-eslint/eslint-plugin';
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
@@ -18,9 +18,11 @@ export default [
       },
     },
     plugins: {
+      '@typescript-eslint': tseslint,
       prettier: prettierPlugin,
     },
     rules: {
+      '@typescript-eslint/no-unused-vars': ['error'],
       'prettier/prettier': 'error',
       semi: ['warn', 'always'],
     },
