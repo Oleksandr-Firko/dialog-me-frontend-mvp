@@ -1,15 +1,45 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@plugin "daisyui" {
+  themes: all;
+}
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+@font-face {
+  font-family: 'BloggerSans';
+  src: url('/fonts/BloggerSans-Bold.woff') format('woff');
+  font-weight: 700, 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'manrope-regular';
+  src: url('/fonts/manrope-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.blogger-sans-700 {
+  font-family: 'BloggerSans', sans-serif;
+  font-weight: 700;
+}
+
+.blogger-sans-900 {
+  font-family: 'BloggerSans', sans-serif;
+  font-weight: 900;
+}
+
+.manrope-regular-400 {
+  font-family: 'manrope-regular', sans-serif;
+  font-weight: 400;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  background: linear-gradient(45deg, #e4e4e4, #ffffff);
 }
